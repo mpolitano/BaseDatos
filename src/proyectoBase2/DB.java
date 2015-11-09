@@ -11,5 +11,5 @@ public class DB {
 	 static  String url = "jdbc:postgresql://localhost:5432/postgres";
 	 static String user = "postgres";
 	 static String pass = "root";
-	 static String dataBase="proyecto2";
+	 static String dataBase="proyecto1";
 }
