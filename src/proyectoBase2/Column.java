@@ -3,10 +3,16 @@ package proyectoBase2;
 public class Column {
 	String name;
 	String type;
+	//agregar tamaño
 	
-	public Column(String name, String type){
+	//String role;
+	//String reference;
+	
+	public Column(String name, String type ){
 		this.name= name;
 		this.type=type;
+		//this.role = role;
+		//this.reference = reference;
 	}
 
 
