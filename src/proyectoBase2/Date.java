@@ -104,18 +104,19 @@ public class Date {
 	//Obtengo todas los procedimientos de la tabla dada.
     public LinkedList<Procedure> getProcedure(String schema, Connection  conection) throws SQLException{
     	LinkedList<Procedure> proc = new LinkedList<Procedure>();
-    	LinkedList<Parameter> param =new LinkedList<Parameter>();
         DatabaseMetaData metaData = conection.getMetaData();
     	ResultSet procedure = metaData.getProcedures(null, schema, "%");
+    	ResultSet parameters;
     	while (procedure.next()){
     		String name = procedure.getString("PROCEDURE_NAME");
     		//String type = procedure.getString("PROCEDURE_TYPE");
-    		ResultSet parameters = metaData.getProcedureColumns(null, schema, name, "%");
+    		 parameters = metaData.getProcedureColumns(null, schema, name, "%");
+    		 LinkedList<Parameter> param =new LinkedList<Parameter>();
     		while (parameters.next()) {
     			String ColumnType=parameters.getString(5); //tipo de paramentros in, out, etc
     			String type=parameters.getString("TYPE_NAME"); //tipo de parameters varchar, int, float,etc
     			param.add(new Parameter(ColumnType, type));
-    	}
+    		}
     		proc.add(new Procedure(name,param));
     	}
     	return proc;

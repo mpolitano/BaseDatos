@@ -131,12 +131,12 @@ public class compareDB {
     		proc1.removeAll(proc2);
     		proc2.removeAll(aux);
     		if (proc1.isEmpty())
-    			System.out.println("No tiene procedimientos la base de datos: "+ DBConection.dataBase1 );
+    			System.out.println("No tiene procedimientos extras la base de datos: "+ DBConection.dataBase1 );
     		else{
     			System.out.println("La base de dato: "+ DBConection.dataBase1 +", tiene los siguientes procedimientos extras: ");
     			System.out.println(proc1.toString());}
     		if (proc2.isEmpty())
-    			System.out.println("No tiene procedimientos la base de datos: "+ DBConection.dataBase2 );
+    			System.out.println("No tiene procedimientos extras la base de datos: "+ DBConection.dataBase2 );
     		else{
     			System.out.println("La base de dato: "+ DBConection.dataBase2 +", tiene los siguientes procedimientos extras: ");
         		System.out.println(proc2.toString());}
